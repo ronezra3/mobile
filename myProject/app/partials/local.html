@@ -1,0 +1,43 @@
+﻿<div ng-controller="localController">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4 class="text-warning">תזכורות</h4>
+                </div>
+            </div>
+
+            <div class="row margin-bottom-sm">
+                <div class="col-xs-12">
+                    <form>
+                        <input type="text" ng-model="inputValue" class="form-control" />
+                        <button class=" btn btn-primary" ng-click="save()">
+                            <i class="glyphicon glyphicon-plus"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="lines"></div>
+
+                    <ul class="list">
+                        <li ng-repeat="item in firebaseArr track by $index">
+                            <span ng-bind="$index"></span>
+                            <span ng-bind="item.value"></span>
+                            <button class="btn-sm btn-success pull-right" ng-click="removeItem($index)">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="btn-sm btn-danger" ng-click="clearFirebaseArr()">
+                מחק הכל
+            </button>
+
+        </div>
+    </div>
+</div>

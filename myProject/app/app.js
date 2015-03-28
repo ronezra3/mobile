@@ -5,11 +5,15 @@
 app.config(['$routeProvider',
   function ($routeProvider) {
       $routeProvider.
-        when('/phones', {
-            templateUrl: 'partials/phone-list.html',
-            controller: 'PhoneListCtrl'
+        when('/global', {
+            templateUrl: '/app/partials/global.html',
+            controller: ''
+        }).
+        when('/local', {
+            templateUrl: '/app/partials/local.html',
+            controller: ''
         }).
         otherwise({
-            redirectTo: '/phones'
+            redirectTo: ''
         });
   }]);

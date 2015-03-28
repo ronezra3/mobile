@@ -6,6 +6,9 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.2.0-rc2/css/bootstrap-rtl.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.2.0-rc2/css/bootstrap-rtl.min.css" />
+    <link href="css/bootstrap-rtl-overview.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
     <style>
         body {
@@ -18,7 +21,7 @@
         h4 {
             font-size: 42px;
             letter-spacing: -2px;
-            text-align: left;
+            text-align: right;
         }
 
         .list {
@@ -51,9 +54,9 @@
             border-left: 1px solid #ffaa9f;
             border-right: 1px solid #ffaa9f;
             width: 5px;
-            float: left;
+            float: right;
             height: 495px;
-            margin-left: 40px;
+            margin-right: 40px;
         }
         /*Bootstap Overview*/
         .form-control {
@@ -72,47 +75,7 @@
 <body>
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h4 class="text-warning">Notes</h4>
-                    </div>
-                </div>
-
-                <div class="row margin-bottom-sm">
-                    <div class="col-xs-12">
-                        <form>
-                            <input type="text" ng-model="inputValue" class="form-control" />
-                            <button class=" btn btn-primary" ng-click="save()">
-                                <i class="glyphicon glyphicon-plus"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="lines"></div>
-
-                        <ul class="list">
-                            <li ng-repeat="item in firebaseArr track by $index">
-                                <span ng-bind="$index"></span>
-                                <span ng-bind="item.value"></span>
-                                <button class="btn-sm btn-success pull-right" ng-click="removeItem($index)">
-                                    <i class="glyphicon glyphicon-ok"></i>
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <button class="btn-sm btn-danger" ng-click="clearFirebaseArr()">
-                    clear all
-                </button>
-
-            </div>
-        </div>
+        <ng-view></ng-view>
     </div>
 
     <!--Script Area-->
@@ -128,7 +91,8 @@
     <!--AngularJS-->
     <script src="app/app.js"></script>
     <script src="app/controller/mainController.js"></script>
-
+    <script src="app/controller/globalController.js"></script>
+    <script src="app/controller/localController.js"></script>
 
 </body>
 </html>
