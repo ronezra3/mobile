@@ -60,6 +60,7 @@
     <Content Include="app\app.js" />
     <Content Include="app\common\test.js" />
     <Content Include="app\controller\mainController.js" />
+    <Content Include="css\app.css" />
     <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -67,6 +68,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\app.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
